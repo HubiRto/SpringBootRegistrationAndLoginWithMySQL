@@ -1,9 +1,12 @@
-package pl.pomoku.springbootregistrationandloginwithmysql;
+package pl.pomoku.springbootregistrationandloginwithmysql.User;
+
+import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +18,9 @@ public class User {
     @Column(nullable = false, length = 64)
     private String password;
 
-    @Column(name = "first_name", nullable = false, length = 45)
+    @Column(name = "first_name", nullable = false, length = 20)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false, length = 45)
+    @Column(name = "last_name", nullable = false, length = 20)
     private String lastName;
 }
